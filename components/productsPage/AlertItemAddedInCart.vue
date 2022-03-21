@@ -1,6 +1,6 @@
 <template>
   <div class="containerAlertItemAdded">
-      <p class="alertText"><i @click.prevent="closeAlert" class="fas fa-times mr-2"></i> Item adicionado ao carrinho.</p>
+      <p class="alertText"><i @click.prevent="closeAlert" class="fas fa-times mr-2"></i> Item adicionado ao carrinho. <router-link class="ml-2" to="/cart">Ver</router-link></p>
       <div class="line"></div>
   </div>
 </template>
@@ -59,6 +59,9 @@ computed: {
             color: #fff;
             font-family: 'source-sans-reg';
             margin-bottom: 5px;
+            a {
+                color: #e7afff;
+            }
             i {
                 cursor: pointer;
             }

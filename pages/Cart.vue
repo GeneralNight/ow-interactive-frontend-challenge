@@ -1,5 +1,5 @@
 <template>
-  <h1>Carrinho</h1>
+  <Header/>
 </template>
 
 <script>

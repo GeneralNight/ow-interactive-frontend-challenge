@@ -1,8 +1,8 @@
 <template>
     <section id="containerCarroussel">
       <div>
-        <img v-if="actualSlide==1"  src="~/assets/img/banner1.jpg" alt="" class="enterImg imgCaroussel img-fluid" >
-        <img v-if="actualSlide==2"  src="~/assets/img/banner2.jpg" alt="" class="enterImg imgCaroussel img-fluid">
+        <img v-if="actualSlide==1"  src="~/assets/img/banner1.jpg" alt="banner 1" class="enterImg imgCaroussel img-fluid" >
+        <img v-if="actualSlide==2"  src="~/assets/img/banner2.jpg" alt="banner 2" class="enterImg imgCaroussel img-fluid">
       </div>
 
       <div class="containerBullets d-flex justify-content-center">

@@ -48,6 +48,7 @@ computed: {
 <style lang="scss" scoped>
     #containerHeader {
         padding: 50px 0;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
 
         @include d(xs) {
             padding: 30px 0;
