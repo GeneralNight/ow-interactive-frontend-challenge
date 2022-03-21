@@ -13,7 +13,7 @@
                             </ul>
                             <div class="containerCartIcon d-flex align-items-end" @click.prevent="goTo('/cart')">
                                 <img src="~/assets/img/cartIcon.png" alt="ícone carrinho de compras" class="cartIcon ml-5">
-                                <div class="numOfProducts d-flex justify-content-center align-items-center">0</div>
+                                <div class="numOfProducts d-flex justify-content-center align-items-center">{{cart.length}}</div>
                             </div>
                         </div>
                         <i class="fas fa-bars iconMenu d-sm-none" v-b-toggle.sidebarMenu></i>
@@ -25,12 +25,16 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
 name: 'Header',
 methods: {
     goTo(route) {
         this.$router.push(route)
     }
+},
+computed: {
+    ...mapState(['cart'])
 }
 }
 </script>

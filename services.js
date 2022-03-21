@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://raw.githubusercontent.com/owInteractive/desafio-frontend-2020/master/produtos.json';
+const url = 'https://raw.githubusercontent.com/owInteractive/desafio-frontend-2020/master';
 
 const axiosInstance = axios.create({
   baseURL: url,
@@ -31,6 +31,9 @@ export const api = {
   },
   delete(endpoint) {
     return axiosInstance.delete(endpoint);
+  },
+  getProducts() {
+    return axios.get('https://raw.githubusercontent.com/owInteractive/desafio-frontend-2020/master/produtos.json')
   }
 };
 
