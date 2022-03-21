@@ -31,7 +31,13 @@ export const mutations = {
         }else {
             state.cart.filter(prodInCart=>prodInCart.name==payload.name)[0].ammount += 1
         }
-    }    
-}
+    },
+    REMOVE_CART(state,payload) {
+        state.cart.splice(payload,1)
+    },
+    INCREASE_CART_AMMOUNT(state,payload) {
+        state.cart[payload].ammount += 1
+    }
+}   
 
 export const actions = {}

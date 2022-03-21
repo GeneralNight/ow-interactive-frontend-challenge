@@ -1,5 +1,8 @@
 <template>
-  <Header/>
+  <div>
+    <Header/>
+    <CartList/>
+  </div>
 </template>
 
 <script>
