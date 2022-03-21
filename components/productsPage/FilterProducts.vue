@@ -86,6 +86,7 @@ computed: {
 
 <style lang="scss" scoped>
 #containerFilterProducts {
+    margin-top: 50px;
     @include d(xs) {
         padding: 0 15px;
     }

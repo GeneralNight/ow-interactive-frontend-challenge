@@ -2,6 +2,7 @@
     <div>
         <Header/>
         <SideBarMenu/>
+        <Caroussel/>
         <FilterProducts/>
         <ProductsList/>
         <AlertItemAddedInCart v-if="itemAdded"/>
