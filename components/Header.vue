@@ -5,17 +5,18 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center">
                         <img src="~/assets/img/logo.png" alt="Logo Mkt Place" class="logo">
-                        <div class="containerLinks d-flex align-items-center">
+                        <div class="containerLinks align-items-center d-none d-sm-flex">
                             <ul class="d-flex menuLinks">
                                 <li>
                                     <router-link to="/products">Produtos</router-link>
                                 </li>
                             </ul>
-                            <div class="containerCartIcon d-flex align-items-end">
+                            <div class="containerCartIcon d-flex align-items-end" @click.prevent="goTo('/cart')">
                                 <img src="~/assets/img/cartIcon.png" alt="ícone carrinho de compras" class="cartIcon ml-5">
                                 <div class="numOfProducts d-flex justify-content-center align-items-center">0</div>
                             </div>
                         </div>
+                        <i class="fas fa-bars iconMenu d-sm-none" v-b-toggle.sidebarMenu></i>
                     </div>
                 </div>
             </div>
@@ -25,13 +26,22 @@
 
 <script>
 export default {
-name: 'Header'
+name: 'Header',
+methods: {
+    goTo(route) {
+        this.$router.push(route)
+    }
+}
 }
 </script>
 
 <style lang="scss" scoped>
     #containerHeader {
         padding: 50px 0;
+
+        @include d(xs) {
+            padding: 30px 0;
+        }
 
         .menuLinks {
             text-decoration: none;
@@ -63,6 +73,20 @@ name: 'Header'
                 border-radius: 50%;
                 font-family: 'source-sans-bold';
                 color: #fff;
+            }
+        }
+
+        .iconMenu {
+            font-size: 1.15rem;
+            color: #909090;
+            border-radius: 8px;
+            padding: 10px;
+            border: 2px solid #8e36b7;
+            cursor: pointer;
+            transition: .2s;
+            &:hover {
+                color: #fff;
+                background: #8e36b7;
             }
         }
     }
