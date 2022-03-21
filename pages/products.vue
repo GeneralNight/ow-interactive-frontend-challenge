@@ -3,6 +3,7 @@
         <Header/>
         <SideBarMenu/>
         <FilterProducts/>
+        <ProductsList/>
     </div>
 </template>
 

@@ -31,7 +31,7 @@ name: 'Header',
 methods: {
     goTo(route) {
         this.$router.push(route)
-    }
+    },
 },
 computed: {
     ...mapState(['cart'])

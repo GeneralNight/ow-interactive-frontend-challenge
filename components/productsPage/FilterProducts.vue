@@ -58,8 +58,10 @@ methods: {
     filterProducts() {
         this.isFiltred = false
 
-        if(this.verifyFilter())
+        if(this.verifyFilter()) {
             return
+        }
+        
         this.someError.status = false
         var filtredProds = this.products.filter(c=>c.name.toLowerCase().indexOf(this.filterParam.toLowerCase()) > - 1)
         this.$store.commit('SET_FILTRED_PRODUCTS',filtredProds)
@@ -85,6 +87,10 @@ computed: {
     .boxSearch {
         box-shadow: 0 0 10px rgba(0,0,0,0.15);
         padding: 15px 0;
+        margin: 0;
+        @include d(xs) {
+            margin: 0 -15px;
+        }
 
         @include d(xs) {
             padding: 10px 0;
