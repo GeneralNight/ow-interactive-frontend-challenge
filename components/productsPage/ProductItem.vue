@@ -10,7 +10,7 @@
                 <p class="prodDescription ">{{itemData.description}}</p>
                 <p class="prodPrice ">{{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(itemData.price)}}</p>
             </div>
-            <button class="bAddCart d-flex w-100 justify-content-center">
+            <button class="bAddCart d-flex w-100 justify-content-center" @click.prevent="addProductToCartOrIncrease(itemData)">
                 Adicionar ao carrinho
             </button>
         </div>
@@ -20,7 +20,14 @@
 <script>
 export default {
 name: 'ProductItem',
-props: ['itemData']
+props: ['itemData'],
+methods: {
+    addProductToCartOrIncrease(prod) {
+        this.$store.commit("ADD_CART",prod)
+        this.$store.commit("SET_ITEM_ADDED",true)
+        
+    }
+}
 }
 </script>
 

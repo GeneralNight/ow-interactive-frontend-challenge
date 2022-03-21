@@ -1,10 +1,14 @@
 export const state = () => ({
     cart: [],
     products: [],
-    filtredProducts: []
+    filtredProducts: [],
+    itemAdded: false
 })
 
 export const mutations = {
+    SET_ITEM_ADDED(state,paylaod) {
+        state.itemAdded = paylaod
+    },
     SET_PRODUCTS(state,paylaod) {
         state.products = paylaod
     },
@@ -20,8 +24,13 @@ export const mutations = {
     CLEAN_CART(state,paylaod) {
         state.cart = []
     },
-    SET_CART(state,payload) {
-        state.cart = payload
+    ADD_CART(state,payload) {
+        if(state.cart.filter(prodInCart=>prodInCart.name==payload.name).length == 0) {
+            payload.ammount = 1
+            state.cart.push(payload)
+        }else {
+            state.cart.filter(prodInCart=>prodInCart.name==payload.name)[0].ammount += 1
+        }
     }    
 }
 

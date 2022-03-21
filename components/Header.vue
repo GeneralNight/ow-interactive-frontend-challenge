@@ -5,15 +5,21 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center">
                         <img src="~/assets/img/logo.png" alt="Logo Mkt Place" class="logo">
-                        <div class="containerLinks align-items-center d-none d-sm-flex">
+                        <div class="containerLinks align-items-end d-none d-sm-flex">
                             <ul class="d-flex menuLinks">
                                 <li>
                                     <router-link to="/products">Produtos</router-link>
                                 </li>
                             </ul>
-                            <div class="containerCartIcon d-flex align-items-end" @click.prevent="goTo('/cart')">
-                                <img src="~/assets/img/cartIcon.png" alt="ícone carrinho de compras" class="cartIcon ml-5">
-                                <div class="numOfProducts d-flex justify-content-center align-items-center">{{cart.length}}</div>
+                            <div class="containerCartIcon d-flex align-items-end ml-5" @click.prevent="goTo('/cart')">
+                                <img src="~/assets/img/cartIcon.png" alt="ícone carrinho de compras" class="cartIcon">
+                                <div class="numOfProducts d-flex justify-content-center align-items-center">
+                                    {{
+                                        cart.reduce(function(prev, cur) {
+                                            return prev + cur.ammount;
+                                        }, 0)
+                                    }}
+                                </div>
                             </div>
                         </div>
                         <i class="fas fa-bars iconMenu d-sm-none" v-b-toggle.sidebarMenu></i>
@@ -69,7 +75,16 @@ computed: {
         }
 
         .containerCartIcon {
+            cursor: pointer;
+            transition: .2s;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                border-bottom: 2px solid #8e36b7;
+                filter: brightness(.9);
+            }
             .numOfProducts {
+                
                 background: #ed1c24;
                 width: 20px;
                 height: 20px;

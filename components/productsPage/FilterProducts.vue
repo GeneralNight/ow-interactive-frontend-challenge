@@ -56,14 +56,18 @@ methods: {
         }
     },
     filterProducts() {
-        this.isFiltred = false
-
+        
         if(this.verifyFilter()) {
             return
         }
         
+        this.isFiltred = false
         this.someError.status = false
-        var filtredProds = this.products.filter(c=>c.name.toLowerCase().indexOf(this.filterParam.toLowerCase()) > - 1)
+        var filtredProds = this.products.filter(prod => {
+            if(prod.name.toLowerCase().indexOf(this.filterParam.toLowerCase()) > - 1) {
+                return prod
+            }
+        })
         this.$store.commit('SET_FILTRED_PRODUCTS',filtredProds)
         this.isFiltred = true        
     },
@@ -71,6 +75,7 @@ methods: {
         this.filterParam = ''
         this.$store.commit('SET_FILTRED_PRODUCTS',this.products)
         this.isFiltred = false
+        this.someError.status = false
     }
 },
 computed: {

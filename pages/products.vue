@@ -4,11 +4,15 @@
         <SideBarMenu/>
         <FilterProducts/>
         <ProductsList/>
+        <AlertItemAddedInCart v-if="itemAdded"/>
+        <BackToTop class="d-md-none" v-if="!itemAdded"/>
+        <Footer/>
     </div>
 </template>
 
 <script>
 import {api} from '~/services.js'
+import {mapState} from 'vuex'
 export default {
 name: 'productsPage',
 data() {
@@ -29,7 +33,7 @@ created() {
     this.loadProducts()
 },
 computed: {
-
+    ...mapState(['itemAdded'])
 }
 }
 </script>
