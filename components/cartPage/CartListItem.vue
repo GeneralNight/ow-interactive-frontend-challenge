@@ -1,6 +1,6 @@
 <template>
     <div class="row containerItemCart">
-        <div class="col-6 col-sm-3 d-flex flex-column align-items-center justify-content-center">
+        <div class="col-6 col-sm-3 d-flex flex-column align-items-start justify-content-center">
             <div class="d-flex align-items-center justify-content-start">
                 <i class="fas fa-trash-alt mr-3" @click.prevent="removeProductFromCart(index)"></i> 
                 <p class="mb-0">{{cartItem.name}}</p>
@@ -57,7 +57,8 @@ methods: {
         this.showInput = false
     },
     formatVal(val) {
-        return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val)
+        var numFormated = parseFloat(val).toFixed(2)
+        return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(numFormated)
     },
     removeProductFromCart(index) {
         this.$store.commit('REMOVE_CART',index)

@@ -2,6 +2,7 @@
   <div>
     <Header/>
     <CartList/>
+    <Footer/>
   </div>
 </template>
 

@@ -57,10 +57,11 @@ watch: {
 
 <style lang="scss" scoped>
     .containerResumeCart {
-        margin-top: 40px;
+        padding: 40px 0;
+        border-bottom: #434343 solid 1px;
 
         @include d(xs) {
-            margin-top: 20px;
+            padding: 20px 0;
         }
 
         .containerOnDemand, .containerOnTimes {
