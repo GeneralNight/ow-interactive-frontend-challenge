@@ -3,7 +3,10 @@
         <div class="col-6 col-sm-3 d-flex flex-column align-items-start justify-content-center">
             <div class="d-flex align-items-center justify-content-start">
                 <i class="fas fa-trash-alt mr-3" @click.prevent="removeProductFromCart(index)"></i> 
-                <p class="mb-0">{{cartItem.name}}</p>
+                <div>
+                    <p class="productCategory">{{cartItem.category}}</p>
+                    <p class="mb-0">{{cartItem.name}}</p>                    
+                </div>                
             </div>
         </div>
         <div class="col-6 col-sm-3 d-flex flex-column align-items-center justify-content-center">
@@ -122,6 +125,13 @@ watch: {
     padding-bottom: 30px;
 
     b {color: #434343;}
+
+    .productCategory {
+        color: #8e36b7;
+        font-family: 'source-sans-bold';
+        font-size: .9rem;
+        margin-bottom: 5px;
+    }
 
     &:first-child {
         margin-top: 30px;

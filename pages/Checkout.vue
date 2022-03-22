@@ -4,6 +4,7 @@
       <SideBarMenu/>
       <FormCheckout/>
       <ModalSuccess/>
+      <Footer/>
   </div>
 </template>
 

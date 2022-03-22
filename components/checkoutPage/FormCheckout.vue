@@ -269,6 +269,7 @@ methods: {
 <style lang="scss" scoped>
 #containerFormCheckout {
     padding: 60px 0;
+    min-height: 80vh;
 
     label {
         color: #434343;

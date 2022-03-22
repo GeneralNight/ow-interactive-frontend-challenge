@@ -3,9 +3,11 @@
         <div class="container">
             <div class="row ">
                <ProductItem :itemData="productItem" v-for="(productItem,index) in filtredProducts" :key="index"/>
-               <p class="itemsNotFound mb-0" v-if="filtredProducts.length==0 || products.length==0">
-                   {{products.length==0 ? 'Nenhum produto para mostrar': 'Nenhum produto com este termo encontrado.'}}
-               </p>
+               <div class="col">
+                    <p class="itemsNotFound mb-0" v-if="filtredProducts.length==0 || products.length==0">
+                        {{products.length==0 ? 'Nenhum produto para mostrar': 'Nenhum produto com este termo encontrado.'}}
+                    </p>
+               </div>
             </div>
         </div>
     </section>
@@ -45,6 +47,11 @@ export default {
             background: #8e36b7;
             border-radius: 5px;
             padding: 5px 10px;
+            width: fit-content;
+
+            @include d(xs) {
+                font-size: 1rem;
+            }
         }
     }
 </style>
