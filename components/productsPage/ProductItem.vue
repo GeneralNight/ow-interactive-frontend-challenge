@@ -27,6 +27,7 @@ methods: {
         this.$store.commit("ADD_CART",prod)
         this.$store.commit("SET_ITEM_ADDED",true)  
         this.$store.commit("SOME_ITEM_ADDED")  
+        this.$store.dispatch('saveCartInLocalHost')
     }
 },
 computed: {

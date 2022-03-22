@@ -7,6 +7,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+    SET_CART(state,payload) {
+        state.cart = payload
+    },
     SOME_ITEM_ADDED(state) {
         state.someItemAdded = !state.someItemAdded
     },
@@ -39,9 +42,14 @@ export const mutations = {
     REMOVE_CART(state,payload) {
         state.cart.splice(payload,1)
     },
-    INCREASE_CART_AMMOUNT(state,payload) {
+    TOGGLE_CART_AMMOUNT(state,payload) {
         state.cart = payload
     }
 }   
 
-export const actions = {}
+export const actions = {
+    saveCartInLocalHost() {
+        window.localStorage.cart = JSON.stringify(this.state.cart)
+        console.log()
+    },
+}

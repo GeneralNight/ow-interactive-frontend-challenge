@@ -44,11 +44,13 @@ computed: {
     ...mapState(['cart','someItemAdded']),
 },
 created() {
-    this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0)
+    this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) <= 99 ? 
+    this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) : '+99'
 },
 watch: {
     someItemAdded() {
-        this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0)
+        this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) <= 99 ?
+        this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) : '+99'
     },
 }
 }
