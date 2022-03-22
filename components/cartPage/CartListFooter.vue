@@ -47,6 +47,7 @@ methods: {
     @include d(xs) {
         padding: 20px 0;
     }
+
     .containerClearCart {
         color: #434343;
         font-family: 'source-sans-reg';
@@ -56,10 +57,14 @@ methods: {
 
         i {
             color: #909090;
+            transition: .2s;
         }
 
         &:hover {
             color: #8e36b7;
+            i {
+                color: #8e36b7;
+            }
         }
     }
 
@@ -72,6 +77,11 @@ methods: {
             padding: 10px 0px;
             text-decoration: none;
             width: 100%;
+            transition: .2s;
+
+            &:hover {
+                filter: brightness(.9);
+            }
         }
 
         .bKeepShopping {
