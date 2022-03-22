@@ -1,7 +1,9 @@
 <template>
   <div>
       <Header/>
+      <SideBarMenu/>
       <FormCheckout/>
+      <ModalSuccess/>
   </div>
 </template>
 

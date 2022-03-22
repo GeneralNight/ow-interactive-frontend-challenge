@@ -10,7 +10,7 @@
             <li>
                 <router-link class="d-flex align-items-center" to="/cart">
                     <i class="fas fa-shopping-cart mr-3"></i> Carrinho 
-                    <div class="numOfProducts d-flex justify-content-center align-items-center ml-2">0</div>                
+                    <div class="numOfProducts d-flex justify-content-center align-items-center ml-2">{{cartAmmount}}</div>                
                 </router-link>
             </li>
         </ul>
@@ -18,8 +18,27 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
-name: 'sideBarMenu'
+name: 'sideBarMenu',
+data() {
+    return {
+        cartAmmount : 0
+    }
+},
+computed: {
+    ...mapState(['cart','someItemAdded']),
+},
+created() {
+    this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) <= 99 ? 
+    this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) : '+99'
+},
+watch: {
+    someItemAdded() {
+        this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) <= 99 ?
+        this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0) : '+99'
+    },
+}
 }
 </script>
 

@@ -34,6 +34,12 @@ export const api = {
   },
   getProducts() {
     return axios.get('https://raw.githubusercontent.com/owInteractive/desafio-frontend-2020/master/produtos.json')
+  },
+  getAddress(cep) {
+    return axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+  },
+  sendCheckout(body) {
+    return axios.post(`https://raw.githubusercontent.com/owInteractive/desafio-frontend-2020/master/orders/store`,body)
   }
 };
 

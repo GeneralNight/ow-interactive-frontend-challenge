@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header/>
+    <SideBarMenu/>
     <CartList/>
     <Footer/>
   </div>

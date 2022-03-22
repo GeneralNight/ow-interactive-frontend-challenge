@@ -3,8 +3,8 @@
         <div class="container">
             <div class="row ">
                <ProductItem :itemData="productItem" v-for="(productItem,index) in filtredProducts" :key="index"/>
-               <p class="itemsNotFound mb-0" v-if="filtredProducts.length==0">
-                   Nenhum produto com este termo encontrado.
+               <p class="itemsNotFound mb-0" v-if="filtredProducts.length==0 || products.length==0">
+                   {{products.length==0 ? 'Nenhum produto para mostrar': 'Nenhum produto com este termo encontrado.'}}
                </p>
             </div>
         </div>
