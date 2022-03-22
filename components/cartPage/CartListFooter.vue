@@ -34,7 +34,7 @@ methods: {
                 window.localStorage.clear()
             }
         }
-        this.$store.commit('SOME_ITEM_ADDED')
+        this.$store.commit('CART_CHANGED')
     }
 }
 }

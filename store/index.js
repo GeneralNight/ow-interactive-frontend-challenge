@@ -3,15 +3,15 @@ export const state = () => ({
     products: [],
     filtredProducts: [],
     itemAdded: false,
-    someItemAdded: false
+    cartChanged: false
 })
 
 export const mutations = {
     SET_CART(state,payload) {
         state.cart = payload
     },
-    SOME_ITEM_ADDED(state) {
-        state.someItemAdded = !state.someItemAdded
+    CART_CHANGED(state) {
+        state.cartChanged = !state.cartChanged
     },
     SET_ITEM_ADDED(state,paylaod) {
         state.itemAdded = paylaod

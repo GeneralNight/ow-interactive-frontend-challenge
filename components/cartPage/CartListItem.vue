@@ -46,23 +46,27 @@ methods: {
     setNewAmmount() {
         var newCart = this.cart
         this.$store.commit('CLEAN_CART')
+
+        // In case value typed in input is bigger than 1, new ammount is this value, otherwise new ammount is 1
         if(parseInt(this.inputVal)>=1) {
             newCart[this.index].ammount = parseInt(this.inputVal)
         }else {
             newCart[this.index].ammount = 1
         }
+        // value updates all cart, updates the local storage and after input has show = false
         this.inputVal = newCart[this.index].ammount
         this.$store.commit('TOGGLE_CART_AMMOUNT',newCart)
         this.$store.dispatch('saveCartInLocalHost')
         this.showInput = false
     },
     formatVal(val) {
+        // return a formatted curency value
         var numFormated = parseFloat(val).toFixed(2)
         return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(numFormated)
     },
     removeProductFromCart(index) {
         this.$store.commit('REMOVE_CART',index)
-        this.$store.commit("SOME_ITEM_ADDED")
+        this.$store.commit("CART_CHANGED")
         this.$store.dispatch('saveCartInLocalHost')
     },
     async increaseProductCart() {
@@ -74,7 +78,7 @@ methods: {
         this.inputVal = newCart[this.index].ammount
 
         this.$store.commit('TOGGLE_CART_AMMOUNT',newCart)
-        this.$store.commit("SOME_ITEM_ADDED")
+        this.$store.commit("CART_CHANGED")
         this.$store.dispatch('saveCartInLocalHost')
     },
     async decreaseProductCart() {
@@ -87,7 +91,7 @@ methods: {
         }
         this.inputVal = newCart[this.index].ammount
         this.$store.commit('TOGGLE_CART_AMMOUNT',newCart)
-        this.$store.commit("SOME_ITEM_ADDED")  
+        this.$store.commit("CART_CHANGED")  
         this.$store.dispatch('saveCartInLocalHost')
     }
 },
