@@ -2,10 +2,14 @@ export const state = () => ({
     cart: [],
     products: [],
     filtredProducts: [],
-    itemAdded: false
+    itemAdded: false,
+    someItemAdded: false
 })
 
 export const mutations = {
+    SOME_ITEM_ADDED(state) {
+        state.someItemAdded = !state.someItemAdded
+    },
     SET_ITEM_ADDED(state,paylaod) {
         state.itemAdded = paylaod
     },

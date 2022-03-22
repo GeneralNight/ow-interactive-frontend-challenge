@@ -14,11 +14,7 @@
                             <div class="containerCartIcon d-flex align-items-end ml-5" @click.prevent="goTo('/cart')">
                                 <img src="~/assets/img/cartIcon.png" alt="ícone carrinho de compras" class="cartIcon">
                                 <div class="numOfProducts d-flex justify-content-center align-items-center">
-                                    {{
-                                        cart.reduce(function(prev, cur) {
-                                            return prev + cur.ammount;
-                                        }, 0)
-                                    }}
+                                    {{cartAmmount}}
                                 </div>
                             </div>
                         </div>
@@ -34,13 +30,26 @@
 import {mapState} from 'vuex'
 export default {
 name: 'Header',
+data() {
+    return {
+        cartAmmount : 0
+    }
+},
 methods: {
     goTo(route) {
         this.$router.push(route)
     },
 },
 computed: {
-    ...mapState(['cart'])
+    ...mapState(['cart','someItemAdded']),
+},
+created() {
+    this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0)
+},
+watch: {
+    someItemAdded() {
+        this.cartAmmount =  this.cart.reduce(function(prev, cur) {return prev + cur.ammount;}, 0)
+    },
 }
 }
 </script>

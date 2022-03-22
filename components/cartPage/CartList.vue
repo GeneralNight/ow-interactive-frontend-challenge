@@ -3,14 +3,15 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="row containerHeaderTable">
-                        <div class="col-3 text-center font-weight-bold">Produtos</div>
-                        <div class="col-3 text-center font-weight-bold">Quantidade</div>
-                        <div class="col-3 text-center font-weight-bold">Valor unitário</div>
-                        <div class="col-3 text-center font-weight-bold">Total</div>
+                    <div class="row containerHeaderTable ">
+                        <div class="col-6 d-flex flex-column align-items-center text-center justify-content-center col-sm-3 font-weight-bold">Produtos</div>
+                        <div class="col-6 d-flex flex-column align-items-center text-center justify-content-center col-sm-3 font-weight-bold">Quantidade</div>
+                        <div class="w-100 d-sm-none my-2"></div>
+                        <div class="col-6 d-flex flex-column align-items-center text-center justify-content-center col-sm-3 font-weight-bold">Valor unitário</div>
+                        <div class="col-6 d-flex flex-column align-items-center text-center justify-content-center col-sm-3 font-weight-bold">Total</div>
                     </div>
                     <div class="containerList" v-if="cart.length>0">
-                        <CartListItem :itemAmmount.sync="cartItem.ammount" :itemUpdated.sync="itemUpdated" :index="index" :cartItem="cartItem" v-for="(cartItem,index) in cart" :key="index"/>
+                        <CartListItem :itemAmmount.sync="cartItem.ammount" :index="index" :cartItem="cartItem" v-for="(cartItem,index) in cart" :key="index"/>
                     </div>
                     <ResumeCart/>
                 </div>

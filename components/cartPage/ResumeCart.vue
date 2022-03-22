@@ -1,14 +1,24 @@
 <template>
-  <div class="containerResumeCart d-flex flex-column align-items-end justify-content-end">
-      <div class="d-flex containerOnDemand align-items-center">
-          <p class="totalOnDemandText mb-0 mr-3">Total à vista</p>
-          <p class="totalOnDemandVal mb-0">{{totalInCart}}</p>
-      </div>
-      <div class="d-flex containerOnTimes align-items-center">
-          <p class="totalOnTimesText mb-0 mr-3">Total Parcelado</p>
-          <p class="totalOnTimesVal mb-0 text-center">em até <b>10x {{totalInCartInTen}}</b><br/>(total de {{totalInCart}})</p>
-      </div>
-  </div>
+    <div class="row containerResumeCart d-flex flex-column align-items-end justify-content-end">
+        <div class="col">
+            <div class="row containerOnDemand">
+                <div class="col-12 col-sm-6 col-md-8 col-lg-9 d-flex flex-column align-items-sm-end mb-1 mb-sm-0">
+                    <p class="totalOnDemandText mb-0 mr-3">Total à vista</p>
+                </div>
+                <div class="col d-flex flex-column align-items-sm-end">
+                    <p class="totalOnDemandVal mb-0">{{totalInCart}}</p>
+                </div>
+            </div>
+            <div class="row containerOnTimes">
+                <div class="col-12 col-sm-6 col-md-8 col-lg-9 d-flex flex-column align-items-sm-end mb-1 mb-sm-0">
+                    <p class="totalOnTimesText mb-0 mr-3">Total Parcelado</p>
+                </div>
+                <div class="col d-flex flex-column align-items-sm-end">
+                    <p class="totalOnTimesVal mb-0 text-sm-center">em até <b>10x {{totalInCartInTen}}</b><br/>(total de {{totalInCart}})</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -49,11 +59,19 @@ watch: {
     .containerResumeCart {
         margin-top: 40px;
 
+        @include d(xs) {
+            margin-top: 20px;
+        }
+
         .containerOnDemand, .containerOnTimes {
             .totalOnDemandText, .totalOnDemandVal, .totalOnTimesText {
                 font-size: 1.5rem;
                 font-family: 'source-sans-bold';
                 text-transform: uppercase;
+
+                @include d(md) {
+                    font-size: 1.25rem;
+                }
             }
 
             .totalOnDemandText, .totalOnTimesText {
@@ -66,6 +84,14 @@ watch: {
 
             .totalOnTimesVal {
                 color: #434343;
+            }
+        }
+
+        .containerOnTimes {
+            margin-top: 30px;
+
+            @include d(xs) {
+                margin-top: 20px;
             }
         }
     }

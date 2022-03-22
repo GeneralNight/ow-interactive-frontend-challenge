@@ -18,15 +18,19 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
 name: 'ProductItem',
 props: ['itemData'],
 methods: {
     addProductToCartOrIncrease(prod) {
         this.$store.commit("ADD_CART",prod)
-        this.$store.commit("SET_ITEM_ADDED",true)
-        
+        this.$store.commit("SET_ITEM_ADDED",true)  
+        this.$store.commit("SOME_ITEM_ADDED")  
     }
+},
+computed: {
+    ...mapState(['cart'])
 }
 }
 </script>
