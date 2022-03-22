@@ -41,6 +41,10 @@ export default {
     '~/assets/scss/fonts.scss'
   ],
 
+  router: {
+    base : '/owinteractive'
+  },
+
   styleResources: {
     scss: [
         '~/assets/scss/responsive.scss',
