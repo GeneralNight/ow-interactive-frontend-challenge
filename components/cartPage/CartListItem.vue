@@ -65,6 +65,7 @@ methods: {
         return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(numFormated)
     },
     removeProductFromCart(index) {
+        // Product and its ammounts remove, cart's status changed (it allow ammount on header update) and loca storage updated
         this.$store.commit('REMOVE_CART',index)
         this.$store.commit("CART_CHANGED")
         this.$store.dispatch('saveCartInLocalHost')
@@ -77,6 +78,7 @@ methods: {
         newCart[this.index].ammount += 1
         this.inputVal = newCart[this.index].ammount
 
+        // Cart is replaced by "newCart" variable and local storage is updated
         this.$store.commit('TOGGLE_CART_AMMOUNT',newCart)
         this.$store.commit("CART_CHANGED")
         this.$store.dispatch('saveCartInLocalHost')
@@ -85,10 +87,13 @@ methods: {
         var newCart = this.cart
 
         this.$store.commit('CLEAN_CART')
-
+        
+        // In case item ammount is bigger than one, decrease it
         if(newCart[this.index].ammount>1) {
             newCart[this.index].ammount -= 1
         }
+
+        // Cart is replaced by "newCart" variable and local storage is updated
         this.inputVal = newCart[this.index].ammount
         this.$store.commit('TOGGLE_CART_AMMOUNT',newCart)
         this.$store.commit("CART_CHANGED")  

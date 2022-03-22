@@ -160,18 +160,21 @@ methods: {
         if(cleanCep.length!=8) {
             return
         }
+        // When request done, fill address' form fields
         await api.getAddress(cleanCep).then(async res => {
             this.form.address.street = res.data.logradouro
             this.form.address.neighborhood = res.data.bairro
             this.form.address.city = res.data.localidade
             this.form.address.state = res.data.uf
             this.form.address.complement = res.data.complemento
-            console.log(res.data)
         })
     },
     verifyFields() {
+        // Clean Cep and phone masks to validation
         var cleanCep = this.form.address.cep.replaceAll("-","")
         var cleanPhone = this.form.phone.replaceAll(/[() -]/gi, '')
+        
+        // Case some error, set the text error and return true
         if(cleanCep.length!=8) {
             this.someErrorInForm.text =  'CEP inválido.'
             return true
@@ -192,20 +195,24 @@ methods: {
         this.form.cep = this.form.cep.replaceAll(/[-]/gi, '')
     },
     async sendCheckout() {
+        // Prevent new request disabling checkout button and set error status to default (false)
         this.bCheckout.disabled = true
         this.bCheckout.text = 'Enviando'
         this.someErrorInForm.status = false
+        // Make the verification of required fields, case some error, return; set error status true and set checkout button to default
         if(this.verifyFields()) {
             this.someErrorInForm.status = true
             this.bCheckout.text = 'Concluir compra'
             this.bCheckout.disabled = false 
             return
         }
-
+        // When send request to store data in a database, uncomment the lines below and be happy :D
         // this.clearMasks()
         // await api.sendCheckout(this.form).then(res => {
         //     console.log(res.data)
         // })
+
+        // Simulation of request: open modal, allow button checkout and clean cart (including storage)
         setTimeout(async () => {
             this.$bvModal.show('modalCheckoutSuccess')
             this.bCheckout.text = 'Concluir compra'
