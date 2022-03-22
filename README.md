@@ -1,69 +1,35 @@
-# desafio-frontend-ow-interactive
+# Guilherme Tinen Ortolani
 
-## Build Setup
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/lucasgdb)](https://github.com/GeneralNight)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rebeccamanzi/)](https://www.linkedin.com/in/guilherme-tinen-ortolani-320a59141/)
+[![Gmail Badge](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:gfmi0911@hotmail.com)
 
-```bash
-# install dependencies
-$ npm install
+<div align="center">
+  <img width="400" src="https://www.ecoder.com.br/_nuxt/img/code.8968853.png">
+</div>
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+<h3>
+  Hello! Welcome to one more project ☕
+</h3>
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+<p>
+  This project is dedicated to reproduce the template given by Ow Interactive in its Frontend Web Challenge. It's avaible on the badge below.
+</p>
 
-# generate static project
-$ npm run generate
-```
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/lucasgdb)](https://github.com/owInteractive/desafio-front-end)
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+<p>
+  I did it and honestly, it gives me a awesome feedback, because i would prove my skills to myself and pratice near to a real problem. <br/><br/>
+  The project consist in a simple E-Coommerce where, i had to consume the API, build the projects page, the feature that allow add products to cart, the cart page and the checkout page.
+</p>
 
-## Special Directories
+<p>
+  I did in Nuxt and how i have a server for myself, i made the deploy there. Follow the link below:
+</p>
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+<a target="_blank" href="http://challanges.ecoder.com.br/owinteractive">My version of challange</a>
 
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+<p>
+  <br/>
+  Thank you, see you in the next project!
+</p>
