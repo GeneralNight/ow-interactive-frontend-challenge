@@ -22,21 +22,24 @@ data() {
     }
 },
 methods: {
-    async loadProducts() {
+    async loadProducts() { 
         await api.getProducts().then(async res=> {
             this.$store.commit('SET_PRODUCTS',res.data)
             this.$store.commit('SET_FILTRED_PRODUCTS',res.data)
         })
         this.loaded = true
+    },
+    fillCartIfhasData() {
+        if (process.client) {
+            if(window.localStorage.cart && window.localStorage.cart.length>0) {
+                this.$store.commit('SET_CART',JSON.parse(window.localStorage.cart))
+            }
+        }
     }
 },
 created() {
     this.loadProducts()
-    if (process.client) {
-      if(window.localStorage.cart && window.localStorage.cart.length>0) {
-        this.$store.commit('SET_CART',JSON.parse(window.localStorage.cart))
-      }
-    }
+    this.fillCartIfhasData()
 },
 computed: {
     ...mapState(['itemAdded'])

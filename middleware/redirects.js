@@ -1,3 +1,4 @@
+// Router redirects
 export default function (req, res, next) {
     const redirects = [
         {
