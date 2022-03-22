@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Mkt Place',
+    title: 'MktPlace - De tudo para todos.',
     htmlAttrs: {
       lang: 'pt-br'
     },
@@ -12,17 +12,17 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
 
-      {hid: 'keywords',name: 'keywords',content: `Comunicação, Cantaloop, Cantacom`},
-      {hid: 'author',name: 'author',content: `Cantacom`},
-      {hid: 'description',name: 'description',content: `Acreditamos que criatividade não depende de tamanho nem plataforma. Marcas precisam entregar conteúdo, experiências e informações em diversos canais, da maneira mais assertiva possível. É para isso que estamos aqui.`},
+      {hid: 'keywords',name: 'keywords',content: `MKT Place, E-commerce, Eletrônicos, Melhores preços`},
+      {hid: 'author',name: 'author',content: `MktPlace`},
+      {hid: 'description',name: 'description',content: `A melhor loja de nootbooks de Ribeirão Preto e região. Aqui contamos com as melhorres marcas e com preços que cabem no seu orçamento. Clique e confira!`},
 
       {hid: 'og:locale',name: 'og:locale',content: `pt_BR`},
-      {hid: 'og:site_name',name: 'og:site_name',content: `Cantacom`},
-      {hid: 'og:title',name: 'og:title',content: `Cantacom - Cantaloop Comunicação mas pode chamar de Cantacom`},
+      {hid: 'og:site_name',name: 'og:site_name',content: `MktPlace`},
+      {hid: 'og:title',name: 'og:title',content: `MktPlace - De tudo para todos.`},
       {hid: 'og:type',name: 'og:type',content: `website`},
-      {hid: 'og:image',name: 'og:image',content: `http://www.cantacom.com.br/website/_img/img-social.png`},
-      {hid: 'og:url',name: 'og:url',content: `www.cantacom.com.br/`},
-      {hid: 'og:description',name: 'og:description',content: `Acreditamos que criatividade não depende de tamanho nem plataforma. Marcas precisam entregar conteúdo, experiências e informações em diversos canais, da maneira mais assertiva possível. É para isso que estamos aqui.`},
+      {hid: 'og:image',name: 'og:image',content: ``},
+      {hid: 'og:url',name: 'og:url',content: `www.mktplace.com.br`},
+      {hid: 'og:description',name: 'og:description',content: `A melhor loja de nootbooks de Ribeirão Preto e região. Aqui contamos com as melhorres marcas e com preços que cabem no seu orçamento. Clique e confira!`},
       {hid: 'og:image:width',name: 'og:image:width',content: `800`},
       {hid: 'og:image:height',name: 'og:image:height',content: `600`},
     ],
@@ -55,6 +55,7 @@ export default {
   components: [
     '~/components/productsPage/',
     '~/components/cartPage/',
+    '~/components/checkoutPage/',
     '~/components/'
   ],
 
