@@ -21,7 +21,7 @@ export const mutations = {
     CLEAN_FILTRED_PRODUCTS(state,paylaod) {
         state.filtredProducts = []
     },
-    CLEAN_CART(state,paylaod) {
+    CLEAN_CART(state) {
         state.cart = []
     },
     ADD_CART(state,payload) {
@@ -36,7 +36,7 @@ export const mutations = {
         state.cart.splice(payload,1)
     },
     INCREASE_CART_AMMOUNT(state,payload) {
-        state.cart[payload].ammount += 1
+        state.cart = payload
     }
 }   
 

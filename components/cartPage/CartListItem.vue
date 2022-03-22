@@ -1,50 +1,79 @@
 <template>
     <div class="row containerItemCart">
         <div class="col-3">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center justify-content-start">
                 <i class="fas fa-trash-alt mr-3" @click.prevent="removeProductFromCart(index)"></i> 
                 <p class="mb-0">{{cartItem.name}}</p>
             </div>
         </div>
         <div class="col-3">
             <div class="d-flex containerAmountControl align-items-center justify-content-center mx-auto">
-                <i class="fas fa-minus"></i>
-                <p class="mb-0 mx-2">{{cartItem.ammount}}</p>
-                <i class="fas fa-plus" @click.prevent="increaseProductCart(index)"></i>
+                <i class="fas fa-minus" @click.prevent="decreaseProductCart()"></i>
+                <p class="mb-0 mx-2">{{itemAmmount}}</p>
+                <i class="fas fa-plus" @click.prevent="increaseProductCart()"></i>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-3 d-flex flex-column align-items-center">
             <p class="mb-0">
-                <b>{{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(cartItem.price)}}</b> à vista <br/>
-                ou 10x de {{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(cartItem.price/10)}}
+                <b>{{formatVal(cartItem.price)}}</b> à vista <br/>
+                ou 10x de {{formatVal(itemUnInTen)}}
             </p>
         </div>
-        <div class="col-3">
+        <div class="col-3 d-flex flex-column align-items-center">
             <p class="mb-0">
-                <b>{{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(cartItem.price*cartItem.ammount)}}</b> à vista <br/>
-                ou 10x de {{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format((cartItem.price*cartItem.ammount)/10)}}
+                <b>{{formatVal(cartItem.price*cartItem.ammount)}}</b> à vista <br/>
+                ou 10x de {{formatVal((cartItem.price*itemAmmount)/10)}}
             </p>
         </div>
     </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
 name: 'CartListItem',
-props: ['cartItem','index'],
+props: ['cartItem','index','itemUpdated','itemAmmount'],
+data() {
+    return {
+        itemUnInTen: this.cartItem.price/10,
+        itemAllTen: (this.cartItem.price*this.itemAmmount)/10
+    }
+},
 methods: {
+    formatVal(val) {
+        return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val)
+    },
     removeProductFromCart(index) {
         this.$store.commit('REMOVE_CART',index)
     },
-    increaseProductCart(index) {
-        this.$store.commit('INCREASE_CART_AMMOUNT',index)
+    async increaseProductCart() {
+        var newCart = this.cart
+        this.$store.commit('CLEAN_CART')
+        newCart[this.index].ammount += 1
+        this.$store.commit('INCREASE_CART_AMMOUNT',newCart)
+        // this.$emit("update:itemUpdated",true)
+    },
+    async decreaseProductCart() {
+        var newCart = this.cart
+        this.$store.commit('CLEAN_CART')
+        if(newCart[this.index].ammount>1) {
+            newCart[this.index].ammount -= 1
+        }
+        this.$store.commit('INCREASE_CART_AMMOUNT',newCart)
+        // this.$emit("update:itemUpdated",true)
     }
+},
+computed: {
+    ...mapState(['cart'])
+},
+watch: {
 }
 }
 </script>
 
 <style lang="scss" scoped>
 .containerItemCart {
+    b {color: #434343;}
     &:first-child {
         margin-top: 30px;
     }

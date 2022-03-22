@@ -9,9 +9,10 @@
                         <div class="col-3 text-center font-weight-bold">Valor unitário</div>
                         <div class="col-3 text-center font-weight-bold">Total</div>
                     </div>
-                    <div class="containerList">
-                        <CartListItem :index="index" :cartItem="cartItem" v-for="(cartItem,index) in cart" :key="index"/>
+                    <div class="containerList" v-if="cart.length>0">
+                        <CartListItem :itemAmmount.sync="cartItem.ammount" :itemUpdated.sync="itemUpdated" :index="index" :cartItem="cartItem" v-for="(cartItem,index) in cart" :key="index"/>
                     </div>
+                    <ResumeCart/>
                 </div>
             </div>
         </div>
@@ -24,11 +25,20 @@ export default {
 name: 'CartList',
 data() {
     return {
-
+        
     }
 },
 computed: {
     ...mapState(['cart'])
+},
+watch: {
+    itemUpdated() {
+        // if(this.itemUpdated) {
+        //     setTimeout(() => {
+        //         this.itemUpdated = false
+        //     },  10);
+        // }
+    }
 }
 }
 </script>
@@ -41,6 +51,13 @@ computed: {
         padding-bottom: 15px;
         border-bottom: 1px solid #909090;
         text-transform: uppercase;
+        color: #434343;
+    }
+
+    .updateText {
+        font-size: 1rem;
+        font-family: 'source-sans-bold';
+        color: #909090;
     }
 }
 </style>
