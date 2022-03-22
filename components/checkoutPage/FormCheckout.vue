@@ -32,7 +32,7 @@
                             <div class="col-12 col-sm-6 col-md-2">
                                 <div class="form-group">
                                     <label for="formNumber">Número*</label>
-                                    <input type="text" class="form-control" id="formNumber" v-model="form.address.number" required>
+                                    <input type="text" class="form-control" id="formNumber" v-mask="'###########'" v-model="form.address.number" required>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
