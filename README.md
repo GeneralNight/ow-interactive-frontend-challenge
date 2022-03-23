@@ -19,12 +19,12 @@
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/lucasgdb)](https://github.com/owInteractive/desafio-front-end)
 
 <p>
-  I did it and honestly, it gives me a awesome feedback, because i would prove my skills to myself and pratice near to a real problem. <br/><br/>
-  The project consist in a simple E-Coommerce where, i had to consume the API, build the projects page, the feature that allow add products to cart, the cart page and the checkout page.
+  I did it and honestly, it gaves me an awesome feedback, I would prove my skills and pratice near to real problem. <br/><br/>
+  The project consists in a simple E-Coommerce where, i had to consume the API, build the products page, the feature that allow add products to cart, the cart page and the checkout page.
 </p>
 
 <p>
-  I did in Nuxt and how i have a server for myself, i made the deploy there. Follow the link below:
+  I did in Nuxt and how i have a server, i made the deploy there. Follow the link below:
 </p>
 
 <a target="_blank" href="http://challanges.ecoder.com.br/owinteractive">My version of challange</a>
